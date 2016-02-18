@@ -1,0 +1,19 @@
+  <div layout="row" layout-align="center center" style="position: absolute;top:0;left:0;right:0;bottom:0">
+    <div class="md-whiteframe-2dp whiteBack" flex-gt-md="20" flex-xs="80" flex-sm="50" flex-md="33">
+      <md-toolbar>
+        <span style="padding:20px;"><md-icon class="icon-ico_login_lg"></md-icon> Enter your SSO to use the Application</span>
+      </md-toolbar>
+      <br><br>
+      <div layout="column" layout-padding>
+        <div ng-show="vm.error.message" style="color:#ff8800">{{vm.error.message}}</div>
+        <md-input-container class="md-block">
+          <label>Enter your SSO!</label>
+          <input name="sso" ng-model="vm.sso">
+        </md-input-container>
+      </div>
+      <div layout-padding>
+         <md-button class="md-fab md-primary" ng-disabled="!vm.sso || vm.load" ng-click="vm.authenticate()"><md-icon style="font-size:40px;line-height:55px;" class="icon-ico_check1_lg"></md-icon></md-button>
+         <small style="color:#a8a8a8">... and click the button!</small>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,68 @@
+/*
+ * Copyright (c) 2013 GE Global Research. All rights reserved.
+ *
+ * The copyright to the computer software herein is the property of
+ * GE Global Research. The software may be used and/or copied only
+ * with the written permission of GE Global Research or in accordance
+ * with the terms and conditions stipulated in the agreement/contract
+ * under which the software has been supplied.
+ */
+/*
+
+Where did these come from? CDX new stuff?
+
+@btnBorderForRealzy:                @grayLightest;
+
+@btnPrimaryText:                    @white;
+
+@btnPrimaryToggle:                  darken(@blue,50%);
+@btnIconColorPrimary:               @white;
+
+@btnInverseText:                    @btnPrimaryText;
+@btnInverseBackground:              @btnPrimaryBackground;
+@btnInverseBackgroundHighlight:     @btnPrimaryBackgroundHighlight;
+@btnInverseIconColor:               @btnIconColorPrimary;
+
+
+// toggle
+
+@btnToggleText:                     @white;
+@btnToggleBackground:               @blue;
+
+
+// faceted / type ahead
+@dropdownFacetedFacetBackground: @grayLightest;sx
+
+
+
+//Declarative-visualizations
+//gradient colors for each severity type
+//-----------------------------------------
+@blue1:           #1483B2;
+@blue2:           #25AAE1;
+@yellow1:         #D8BB27;
+@yellow2:         #FBDA06;
+@orange1:         #D07931;
+@orange2:         #F58624;
+@red1:            #C62F27;
+@red2:            #EE3D2C;
+@BarLightsOnGray: #e7e6e7;
+@meterBgGray:     #e7e5e7;
+
+
+// Datagrids
+//-------------
+
+//@dataTableRowEvenBgrnd:   #749BCD;
+//@dataTableRowHover:       #B7CBE5;
+//@dataGridbackgroundColor: #EEEEEE;
+*/
+.ge-logo {
+  background-image: url("../components/brandkit/img/ge-monogram.png");
+}
+.table-bordered th:first-child[rowspan],
+.table-bordered td:first-child[rowspan] {
+  right: 0;
+  border-right-width: 0;
+}
+/*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22..%2Fless%2Fie.less%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3B%3BAAqBS%3BEACP%2CsBAAsB%2C6CAAtB%3B%3BAAGc%2CeACZ%2CGAAY%2CYAAS%3BAADT%2CeAEZ%2CGAAY%2CYAAU%3BEACxB%2CQAAA%3BEACA%2CqBAAA%22%7D */

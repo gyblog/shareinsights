@@ -1,0 +1,50 @@
+[
+    {
+        "category": "Continue",
+        "to": {
+            "meeting": "mycon",
+            "sso": 100000002,
+            "name": "This Event"
+        },
+        "text": "Hell\u00f3 event",
+        "date": 1454053171434,
+        "from": {
+            "meeting": "mycon",
+            "sso": 113005895,
+            "name": "Vasi, Melinda"
+        },
+        "toSSO": 100000002
+    },
+    {
+        "category": "Consider",
+        "to": {
+            "meeting": "mycon",
+            "sso": 100000002,
+            "name": "This Event"
+        },
+        "text": "Uff",
+        "date": 1454053241145,
+        "from": {
+            "meeting": "mycon",
+            "sso": 113005895,
+            "name": "Vasi, Melinda"
+        },
+        "toSSO": 100000002
+    },
+    {
+        "category": "Continue",
+        "to": {
+            "meeting": "mycon",
+            "sso": 100000002,
+            "name": "This Event"
+        },
+        "text": "Hell\u00f3!",
+        "date": 1454053333388,
+        "from": {
+            "meeting": "mycon",
+            "sso": 502561309,
+            "name": "Zakany, Brigitta"
+        },
+        "toSSO": 100000002
+    }
+]

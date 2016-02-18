@@ -1,0 +1,137 @@
+<div>
+    <md-toolbar style="position:fixed">
+      <div class="md-toolbar-tools">
+        <img src="components/brandkit/img/ge-monogram.png" alt="GE Power - Hungary">
+        <span>&nbsp;&nbsp;Share Your Insights</span>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="vm.openSide('left')" aria-label="Attendees">
+          <md-icon md-font-icon="icon-ico_user_groups_lg" style="height:20px;font-size:20px;line-height:20px;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Home" ng-click="vm.goHome()">
+          <md-icon md-font-icon="icon-ico_home_lg" style="height:20px;font-size:20px;line-height:20px;"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+
+    <section layout="row" flex>
+      <!-- LIST sidenav -->
+      <md-sidenav flex class="md-sidenav-left md-whiteframe-z2" md-component-id="left" style="position:fixed;top:0;bottom:0;left:0">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <span>
+            <md-icon class="md-accent" md-font-icon="icon-ico_user_groups_lg" style="font-size:20px"></md-icon>
+            Attendees List
+          </span>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Close" ng-click="vm.openSide('left')">
+            <md-icon class="md-accent" md-font-icon="icon-ico_remove_lg" style="font-size:20px"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-list>
+        <md-input-container class="md-block">
+          <label>Find by Name</label>
+          <input name="findName" ng-model="vm.search.name">
+        </md-input-container>
+        <md-list-item flex ng-repeat="user in vm.results(vm.search.name)">
+          <div class="md-avatar" style="overflow:hidden">
+            <img width="40px" ng-src="{{vm.imgPath + user.sso + '.jpg'}}" alt="{{user.name}}">
+          </div>
+          <p flex class="md-list-item-text" layout="column" style="clear:both">
+            <strong>{{user.name}}</strong>
+            <i ng-show="vm.counter(user.sso) > 0" style="position:absolute;margin-left:-20px;display:block;background-color:#aaccff;width:20px;height:20px;font-size:.8em;color:white;border-radius:20px;text-align:center"><span>{{vm.counter(user.sso)}}</span></i>
+          </p>
+          <md-menu md-position-mode="target-right target" >
+            <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-font-icon="icon-ico_th_lg"></md-icon>
+            </md-button>
+            <md-menu-content width="4" >
+              <md-menu-item ng-show="vm.counter(user.sso)>0">
+                <md-button class="md-primary" ng-click="vm.showall('left', user)">
+                    <div layout="row">
+                      <p flex>View Insights</p>
+                      <md-icon md-menu-align-target md-font-icon="icon-ico_preview_lg" style="margin: auto 3px auto 0;"></md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button class="md-primary" ng-click="vm.initNew('left', user)">
+                    <div layout="row">
+                      <p flex>Write a New Insigth</p>
+                      <md-icon md-menu-align-target md-font-icon="icon-ico_edit_lg" style="margin: auto 3px auto 0;"></md-icon>
+                    </div>
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+        </md-list-item>
+      </md-list>
+      </md-sidenav>
+      <!-- Content -->
+      <md-content flex layout-padding style="margin-top:18px">
+        <div class="container">
+          <div class="openup" ng-hide="vm.new || vm.listed">
+            <img src="images/openup_{{vm.user.meeting}}.jpg" width="100%" style="margin:30px 0 0 0;border-bottom-left-radius:5px;border-bottom-right-radius:5px;overflow:hidden;">
+            <md-content class="mainContent" layout-padding md-theme="default">
+              <h1 class="md-display-3">Wellcome to the <br><strong style="font-size:1.2em;color:#6A1B9A">{{vm.meeting.title}}</strong><br>{{vm.meeting.subtitle}}</h1>
+              <h2>Use this tool to give direkt feedback to your colleagues taking part on this event.
+                <br>Share your suggestion about the organization for next time.</h2>
+              <p>Use the buttons in the top bar to search the <md-icon md-font-icon="icon-ico_user_groups_lg"></md-icon> &nbsp;<b>Attendees</b> list and start sharing your Insights.</p>
+              <p>Use the <md-icon md-font-icon="icon-ico_th_lg"></md-icon> &nbsp;<b>Menu</b> list button aside the Attendee you pick to <b>View</b> <md-icon md-font-icon="icon-ico_preview_lg"></md-icon> or <b>Share</b> <md-icon md-font-icon="icon-ico_edit_lg"></md-icon> Insights.</p>
+              <p>Use the <md-icon md-font-icon="icon-ico_home_lg"></md-icon> &nbsp;<b>Home</b> button to come back to this page and start over.
+            </md-content>
+          </div>
+          <hr>
+          <md-content layout layout-padding layout-align="center center">
+            <div style="color:#a8a8a8">
+              <h1 class="md-display-3 text-center" style="color:#a8a8a8">{{vm.insightCounter}}</h1>
+              <br>
+              <small>Insights shared so far!</small>
+            </div>
+          </md-content>
+          <!-- LIST insights -->
+          <div ng-show="vm.listed">
+            <h1 class="md-display-2" style="padding:30px">View Insights for<br> <strong style="color:#6A1B9A">{{vm.for}}</strong></h1>
+            <div style="background-color:#f8f8f8;margin:20px 20px 50px 20px; padding:60px;padding-bottom:30px;" ng-repeat="r in vm.owninsights | orderBy:date:true track by $index" style="margin-top: 100px">
+              <span class="label {{r.category=='Continue'?'label-success':r.category=='Consider'?'label-default':'label-info'}}" style="font-size:12pt;padding:5px;border-radius:3px;margin-bottom:10px;font-weight:200;">{{r.category}}</span>
+              <p style="white-space:pre-wrap;">{{r.text}}</p>
+              <span class="pull-right"><small>{{r.date | date:'dd.MM.yyyy HH:mm'}}</small></span>
+              <p class="pull-left"><i>From: </i><strong>{{r.from.name}}</strong></p>
+              <div class="clearfix"></div>
+              <div style="width:70px;height:70px;overflow:hidden;border-radius:50px;margin:-30px 0 0 -70px;" class="pull-left">
+                <img style="max-width:100%" ng-src="{{'images/' + r.from.sso + '.jpg'}}">
+              </div>
+            </div>
+          </div>
+
+          <!-- INPUT form -->
+          <div ng-show="vm.new">
+            <h1 class="md-display-2">Write a new Insight</h1>
+            <h2>
+              <div style="margin-left:20px;margin-right:20px;width:100px;height:100px;overflow:hidden;border-radius:50px;">
+                <img width="100%" ng-src="{{(vm.newInsight.to.sso)?vm.imgPath+vm.newInsight.to.sso+'.jpg':''}}">
+              </div>to: <strong style="color:#6A1B9A">{{vm.newInsight.to.name}}</strong></h2>
+            <br>
+            <md-input-container class="md-block">
+              <label>Write your text</label>
+              <textarea ng-model="vm.newInsight.text" style="min-height:100px;font-size:16pt;"></textarea>
+            </md-input-container>
+            <md-radio-group ng-model="vm.newInsight.category" layout="row" layout-align="space-around center">
+              <md-radio-button value="Continue" class="md-primary"> Continue </md-radio-button>
+              <md-radio-button value="Consider" class="md-primary"> Consider </md-radio-button>
+              <md-radio-button value="Contiune/Consider" class="md-primary"> Continuer / Consider </md-radio-button>
+            </md-radio-group>
+            <br><br>
+            <div layout="row" layout-align="center center">
+              <md-button ng-disabled="!vm.newInsight.text" ng-click="vm.savenew(vm.newInsight)" class="md-raised md-primary">
+                submit
+              </md-button>
+            </div>
+          </div>
+
+        </div>
+      </md-content>
+    </section>
+
+  </div>
