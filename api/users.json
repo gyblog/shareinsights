@@ -1,4 +1,4 @@
 [
-  {"sso":"113002132", "name":"Blanckaert, Nele"},
-  {"sso":"212435088", "name":"Budnychenko, Mariana"}
+  {"sso":"113002132", "name":"Blanckaert, Nele", "meeting":"cms"},
+  {"sso":"212435088", "name":"Budnychenko, Mariana", "meeting": "cms"}
 ]
