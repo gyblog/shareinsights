@@ -166,7 +166,9 @@ function ShareCtrl($http, $cookies, $filter, $mdSidenav, $mdMedia){
           vm.new = false;
           vm.for = response.data.to.name;
 				}
-			);
+			).catch(function(error){
+        console.log(error);
+      });
     }
   vm.initNew = initNew;
   function initNew(navID, it){

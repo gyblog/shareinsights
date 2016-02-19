@@ -2,12 +2,9 @@
   $postdata = file_get_contents("php://input");
   $request = json_decode($postdata);
   $fname = "";
-  if($request->meeting == "sales"){
-    $f = file_get_contents('insights_sales.json');
-    $fname = "insights_sales.json";
-  } else if ($request->meeting == "mycon"){
-    $f = file_get_contents('insights_mycon.json');
-    $fname = "insights_mycon.json";
+  if($request->meeting == "cms"){
+    $f = file_get_contents('insights_cms.json');
+    $fname = "insights_cms.json";
   }
 
   if($request->insight){

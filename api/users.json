@@ -13,5 +13,18 @@
   {"sso":"113002074", "name":"Hadley, Ralph", "meeting": "cms"},
   {"sso":"106003316", "name":"Horvath, Zsolt HR", "meeting": "cms"},
   {"sso":"218016953", "name":"Ishihara, Mark", "meeting": "cms"},
-  {"sso":"312001000", "name":"K, Shankar", "meeting": "cms"}
+  {"sso":"312001000", "name":"K, Shankar", "meeting": "cms"},
+  {"sso":"113005618", "name":"Karpati, Zoltan", "meeting": "cms"},
+  {"sso":"108012439", "name":"Larsen, Antje", "meeting": "cms"},
+  {"sso":"113001540", "name":"Lieber, Christophe", "meeting": "cms"},
+  {"sso":"113001605", "name":"Peeters, Frank", "meeting": "cms"},
+  {"sso":"113002126", "name":"Schreurs, Rene", "meeting": "cms"},
+  {"sso":"105066799", "name":"Smid, Daniel", "meeting": "cms"},
+  {"sso":"113009699", "name":"Swiggers, Vanessa", "meeting":"cms"},
+  {"sso":"106005078", "name":"van Alpen, Leen", "meeting": "cms"},
+  {"sso":"113001558", "name":"Van Kempen, Gerard", "meeting": "cms"},
+  {"sso":"113001754", "name":"Van Laethem, Caroline", "meeting": "cms"},
+  {"sso":"106005397", "name":"Van Schevensteen, Kelly", "meeting": "cms"},
+  {"sso":"113003453", "name":"Vanspringel, Nico", "meeting": "cms"},
+  {"sso":"212322452", "name":"Zemlenyi, Tamas", "meeting": "cms"}
 ]
