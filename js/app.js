@@ -83,13 +83,11 @@ function ShareCtrl($http, $cookies, $filter, $mdSidenav, $mdMedia){
   vm.user = $cookies.getObject('user');
 
   vm.meeting = {};
-  if(vm.user.meeting == "mycon"){
-    vm.meeting.title = "Water MyConnections";
-    vm.meeting.subtitle = "Group Mentoring program Closing Event";
-  } else {
-    vm.meeting.title = "GE Water MEA";
-    vm.meeting.subtitle = "Sales Meeting";
+  if(vm.user.meeting == "cms"){
+    vm.meeting.title = "CMS SC Strategy";
+    vm.meeting.subtitle = "Water CMS SC Kick off meeting";
   }
+
 
 
   loadAll();
